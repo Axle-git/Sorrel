@@ -13,6 +13,10 @@ printerNameX = 913
 printerNameY = 318
 printerName = 'SHARP MX-4071 PCL6'
 printToPDF = 'Microsoft Print to PDF'
+folderPathX = 451
+folderPathY = 52
+printerCloseX = 646
+printerCloseY = 43
 
 #   reports
 reportX = 288
