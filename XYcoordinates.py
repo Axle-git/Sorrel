@@ -44,4 +44,24 @@ departuresY = 266
 DbyRoomNumberX = 743
 DbyRoomNumberY = 291
 
-#   
+#   housekeeping
+housekeepingPrintX = 1101
+housekeepingPrintY = 673
+
+#   forecast
+forecastX = 343
+forecastY = 340
+OccAndRevX = 616
+OccAndRevY = 340
+forecastOkayX = 543
+forecastOkayY = 634
+
+#   date window
+dateToDropX = 1055
+dateToDropY = 448
+nextMonthArrowX = 1160
+nextMonthArrowY = 477
+dateOkX = 1004
+dateOkY = 627
+daysX = 957
+daysY = 446

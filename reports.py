@@ -12,7 +12,11 @@ This script does the following steps in order:
 """
 
 
+from saveReports import saveForecast
 from printReports import *
+import psutil
+
+print(psutil.cpu_percent())
 
 if __name__ == '__main__':
 
@@ -24,11 +28,13 @@ if __name__ == '__main__':
     ag.press('win')
     ag.write('Roomkey',interval = .1)
     ag.press('enter')
-    time.sleep(5)   #wait for roomkey to startup
+    time.sleep(8)   #wait for roomkey to startup
 
     ####    login                   ####
     ag.write('alexjacobs', interval = .1)   #username
     ag.press('tab')
     ag.write('LaceFace11', interval = .1)   #password
     ag.press('enter')
-    time.sleep(25)  #wait for roomkey
+    time.sleep(30)  #wait for roomkey
+
+    saveForecast()
