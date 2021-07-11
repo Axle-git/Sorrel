@@ -32,5 +32,3 @@ if __name__ == '__main__':
     ag.write('LaceFace11', interval = .1)   #password
     ag.press('enter')
     time.sleep(25)  #wait for roomkey
-
-    printInHouse()
