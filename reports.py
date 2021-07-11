@@ -16,9 +16,10 @@ from saveReports import saveForecast
 from printReports import *
 import psutil
 
-print(psutil.cpu_percent())
-
 if __name__ == '__main__':
+
+    if psutil.virtual_memory().percent >= 85:   #   assures the sleep times will work properly
+        exit()
 
     ####    Make Report Folder      ####
     os.mkdir(path)

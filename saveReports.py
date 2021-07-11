@@ -133,7 +133,7 @@ def saveForecast():
     navToSaveName()
     ag.write("Room Occupency and Revenue Forecast Report " + currDate, interval = .1)
     ag.press('enter')
-    time.sleep(1)
+    time.sleep(2)
     ag.hotkey('alt','f4')   #   close print window
     time.sleep(.1)
 
