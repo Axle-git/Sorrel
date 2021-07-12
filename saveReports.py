@@ -87,25 +87,6 @@ def saveDepartures():
 
     return
 
-def saveHousekeeping():
-    #   navigate menu
-    ag.press('f9')
-    time.sleep(5)
-    ag.click(housekeepingPrintX,housekeepingPrintY)
-    time.sleep(1)
-
-    #   save report
-    navToSaveName()
-    ag.write("Housekeeping Report " + currDate, interval = .1)
-    ag.press('enter')
-    time.sleep(.1)
-    ag.hotkey('alt','f4')   #   close print window
-    time.sleep(.1)
-    ag.hotkey('alt','f4')
-    time.sleep(.1)
-
-    return
-
 def saveForecast():
     #   navigate menu
     ag.click(reportX,reportY)
@@ -132,6 +113,70 @@ def saveForecast():
     #   save report
     navToSaveName()
     ag.write("Room Occupency and Revenue Forecast Report " + currDate, interval = .1)
+    ag.press('enter')
+    time.sleep(2)
+    ag.hotkey('alt','f4')   #   close print window
+    time.sleep(.1)
+
+    return
+
+def saveGuestNotes():
+
+    #   navigate menu
+    ag.click(reportX,reportY)
+    time.sleep(.1)
+    ag.click(reservationsX,reservationsY)
+    time.sleep(.1)
+    ag.click(guestNotesX,guestNotesY)
+    time.sleep(.1)
+    ag.click(GNarrivalDateX,GNarrivalDateY)
+    time.sleep(.1)
+    ag.click(dateOkX,dateOkY)
+
+    #   save report
+    navToSaveName()
+    ag.write("Guest Notes " + currDate, interval = .1)
+    ag.press('enter')
+    time.sleep(2)
+    ag.hotkey('alt','f4')   #   close print window
+    time.sleep(.1)
+
+    return
+
+def saveHousekeeping():
+    #   navigate menu
+    ag.press('f9')
+    time.sleep(5)
+    ag.click(housekeepingPrintX,housekeepingPrintY)
+    time.sleep(1)
+
+    #   save report
+    navToSaveName()
+    ag.write("Housekeeping Report " + currDate, interval = .1)
+    ag.press('enter')
+    time.sleep(.1)
+    ag.hotkey('alt','f4')   #   close print window
+    time.sleep(.1)
+    ag.hotkey('alt','f4')
+    time.sleep(.1)
+
+    return
+
+def savePropertyStatus():
+    
+    #   navigate menu
+    ag.click(reportX,reportY)
+    time.sleep(.1)
+    ag.click(statisticsX,statisticsY)
+    time.sleep(.1)
+    ag.click(propertyStatusX,propertyStatusY)
+    time.sleep(.1)
+    ag.click(dateOkX,dateOkY)
+    time.sleep(.1)
+
+    #   save report
+    navToSaveName()
+    ag.write("Property Status " + currDate, interval = .1)
     ag.press('enter')
     time.sleep(2)
     ag.hotkey('alt','f4')   #   close print window

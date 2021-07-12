@@ -65,3 +65,17 @@ dateOkX = 1004
 dateOkY = 627
 daysX = 957
 daysY = 446
+
+#   reservations
+reservationsX = 358
+reservationsY = 200
+guestNotesX = 615
+guestNotesY = 466
+GNarrivalDateX = 846
+GNarrivalDateY = 466
+
+#   statistics
+statisticsX = 362
+statisticsY = 266
+propertyStatusX = 654
+propertyStatusY = 266
