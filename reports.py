@@ -12,8 +12,10 @@ This script does the following steps in order:
 """
 
 
-from saveReports import saveForecast
+from saveReports import saveArrivals, saveDepartures, saveForecast, saveGuestNotes, saveHousekeeping, saveInHouse
 from printReports import *
+from quickstart import *
+from driveDownloads import *
 import psutil
 
 if __name__ == '__main__':
@@ -38,4 +40,9 @@ if __name__ == '__main__':
     ag.press('enter')
     time.sleep(30)  #wait for roomkey
 
+    saveInHouse()
+    saveArrivals()
+    saveGuestNotes()
+    saveDepartures()
     saveForecast()
+    saveHousekeeping()
