@@ -17,6 +17,8 @@ folderPathX = 451
 folderPathY = 52
 printerCloseX = 646
 printerCloseY = 43
+upperRightXX = 1896
+upperRightXY = 14
 
 #   reports
 reportX = 288
@@ -47,6 +49,8 @@ DbyRoomNumberY = 291
 #   housekeeping
 housekeepingPrintX = 1101
 housekeepingPrintY = 673
+housekeepingCloseX = 1519
+housekeepingCloseY = 136
 
 #   forecast
 forecastX = 343
@@ -73,6 +77,8 @@ guestNotesX = 615
 guestNotesY = 466
 GNarrivalDateX = 846
 GNarrivalDateY = 466
+ResPrintX = 5
+ResPrintY = 38
 
 #   statistics
 statisticsX = 362

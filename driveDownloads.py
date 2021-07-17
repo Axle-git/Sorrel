@@ -6,6 +6,7 @@ items = importDrive()
 def downloadReservations():
 
     for item in items:
+        print(item["name"])
         if item["name"] == "MASTER RESERVATION LIST":
             file_id = item["id"]
             request = drive_service.files().get_media(fileId=file_id)
@@ -16,3 +17,5 @@ def downloadReservations():
                 status, done = downloader.next_chunk()
                 print("Download %d%%." % int(status.progress() * 100))
             break
+
+downloadReservations()

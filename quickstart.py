@@ -39,9 +39,11 @@ def importDrive():
         print('No files found.')
         return []
     else:
-        return items
-        # open('driveFiles.txt', 'w').close()
-        # driveFiles = open(r"driveFiles.txt","a")
-        # for item in items:
-        #     driveFiles.write(item['name'] + "\t\t" + item['id'] + "\n")
-        # driveFiles.close()
+        #return items
+        open('driveFiles.txt', 'w').close()
+        driveFiles = open(r"driveFiles.txt","a")
+        for item in items:
+            driveFiles.write(item['name'] + "\t\t" + item['id'] + "\n")
+        driveFiles.close()
+
+importDrive()

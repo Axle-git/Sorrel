@@ -40,9 +40,5 @@ if __name__ == '__main__':
     ag.press('enter')
     time.sleep(30)  #wait for roomkey
 
-    saveInHouse()
-    saveArrivals()
-    saveGuestNotes()
-    saveDepartures()
     saveForecast()
     saveHousekeeping()
