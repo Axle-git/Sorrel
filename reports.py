@@ -12,10 +12,10 @@ This script does the following steps in order:
 """
 
 
-from saveReports import saveArrivals, saveDepartures, saveForecast, saveGuestNotes, saveHousekeeping, saveInHouse
+from saveReports import *
 from printReports import *
-from quickstart import *
-from driveDownloads import *
+#from quickstart import *
+#from driveDownloads import *
 import psutil
 
 if __name__ == '__main__':
@@ -29,6 +29,7 @@ if __name__ == '__main__':
 
     ####    open roomkey            ####
     ag.press('win')
+    time.sleep(.5)
     ag.write('Roomkey',interval = .1)
     ag.press('enter')
     time.sleep(8)   #wait for roomkey to startup
@@ -40,5 +41,10 @@ if __name__ == '__main__':
     ag.press('enter')
     time.sleep(30)  #wait for roomkey
 
+    saveArrivals()
+    saveDepartures()
     saveForecast()
+    saveGuestNotes()
     saveHousekeeping()
+    saveInHouse()
+    savePropertyStatus()

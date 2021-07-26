@@ -18,4 +18,3 @@ def downloadReservations():
                 print("Download %d%%." % int(status.progress() * 100))
             break
 
-downloadReservations()

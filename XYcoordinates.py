@@ -79,6 +79,8 @@ GNarrivalDateX = 846
 GNarrivalDateY = 466
 ResPrintX = 5
 ResPrintY = 38
+ResPrintNameX = 897
+ResPrintNameY = 399
 
 #   statistics
 statisticsX = 362

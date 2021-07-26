@@ -141,9 +141,11 @@ def saveGuestNotes():
     #   save report
     ag.click(ResPrintX,ResPrintY)
     time.sleep(.5)
-    ag.click(printerNameX,printerNameY)
+    ag.click(ResPrintNameX,ResPrintNameY)
     time.sleep(.5)
     ag.write(printToPDF, interval = .1)
+    ag.press('enter')
+    time.sleep(.5)
     ag.press('enter')
     time.sleep(2)
     ag.write("Guest Notes " + currDate, interval = .1)
