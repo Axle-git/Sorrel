@@ -1,4 +1,34 @@
-from printReports import *
+from XYcoordinates import *
+import pyautogui as ag
+import time
+from datetime import date
+
+import os
+import sys
+
+today = date.today()
+# mm_dd_yy
+currDate = today.strftime("%m_%d_%y")
+
+parentDir = 'C:/Users/Ajacobs/Reports/'
+path = os.path.join(parentDir, currDate)
+
+def RKLogin():
+    ####    open roomkey            ####
+    ag.press('win')
+    time.sleep(.5)
+    ag.write('Roomkey',interval = .1)
+    ag.press('enter')
+    time.sleep(8)   #wait for roomkey to startup
+
+    ####    login                   ####
+    ag.write('alexjacobs', interval = .1)   #username
+    ag.press('tab')
+    ag.write('LaceFace11', interval = .1)   #password
+    ag.press('enter')
+    time.sleep(30)  #wait for roomkey
+
+    return
 
 def navToPrinter():
     #   WARNING: save screen must be full screen
@@ -197,5 +227,50 @@ def savePropertyStatus():
     time.sleep(2)
     ag.click(upperRightXX,upperRightXY)
     time.sleep(.5)
+
+    return
+
+def saveReportsRK():
+    saveArrivals()
+    saveDepartures()
+    saveForecast()
+    saveGuestNotes()
+    saveHousekeeping()
+    saveInHouse()
+    savePropertyStatus()
+
+    return
+
+#   easiest, most intuitive way to print with python I could come up with
+#   MUST BE DONE AFTER SAVE REPORTS
+def printPackets():
+
+    filePath = "C:\\Users\\Ajacobs\\Reports\\%s\\" % currDate
+    
+    #   IN ORDER
+    reportNames = [ "Arrivals Report %s.pdf" % currDate,
+                    "Departures Report %s.pdf" % currDate,
+                    "InHouse Report %s.pdf" % currDate,
+                    "Room Occupency and Revenue Forecast Report %s.pdf" % currDate,
+                    "Guest Notes %s.pdf" % currDate,
+                    "Property Status %s.pdf" % currDate,
+                    "Housekeeping Report %s.pdf" % currDate]
+                    # "Mindbody Schedule at a Glance %s.pdf" % currDate,
+                    # "Master Reservations Sheet %s.pdf" % currDate,
+                    # "Daily Scoop %s.pdf" % currDate]
+
+    #   arrivals
+    for currFile in reportNames:
+        os.startfile(filePath + currFile)
+        time.sleep(5)
+        ag.hotkey("ctrl","p")
+        time.sleep(5)
+        for i in range(10): #   nav to "print" button
+            ag.press("tab")
+            time.sleep(.3)
+        ag.press("enter")
+        time.sleep(1)
+        ag.hotkey("alt","f4")
+        time.sleep(1)
 
     return

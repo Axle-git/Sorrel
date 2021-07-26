@@ -14,8 +14,6 @@ This script does the following steps in order:
 
 from saveReports import *
 from printReports import *
-#from quickstart import *
-#from driveDownloads import *
 import psutil
 
 if __name__ == '__main__':
@@ -24,27 +22,11 @@ if __name__ == '__main__':
         exit()
 
     ####    Make Report Folder      ####
-    os.mkdir(path)
-    time.sleep(1)
+    # os.mkdir(path)
+    # time.sleep(1)
 
-    ####    open roomkey            ####
-    ag.press('win')
-    time.sleep(.5)
-    ag.write('Roomkey',interval = .1)
-    ag.press('enter')
-    time.sleep(8)   #wait for roomkey to startup
+    #   RKLogin()
 
-    ####    login                   ####
-    ag.write('alexjacobs', interval = .1)   #username
-    ag.press('tab')
-    ag.write('LaceFace11', interval = .1)   #password
-    ag.press('enter')
-    time.sleep(30)  #wait for roomkey
+    #   saveReportsRK()
 
-    saveArrivals()
-    saveDepartures()
-    saveForecast()
-    saveGuestNotes()
-    saveHousekeeping()
-    saveInHouse()
-    savePropertyStatus()
+    #   printPackets()

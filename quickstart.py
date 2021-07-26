@@ -8,7 +8,10 @@ from google.oauth2.credentials import Credentials
 # If modifying these scopes, delete the file token.json.
 SCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly']
 
-def importDrive():
+def main():
+    """Shows basic usage of the Drive v3 API.
+    Prints the names and ids of the first 10 files the user has access to.
+    """
     creds = None
     # The file token.json stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
@@ -30,20 +33,26 @@ def importDrive():
     service = build('drive', 'v3', credentials=creds)
 
     # Call the Drive v3 API
-    # Write names to file
     results = service.files().list(
         pageSize=1000, fields="nextPageToken, files(id, name)").execute()
     items = results.get('files', [])
 
-    if not items:
-        print('No files found.')
-        return []
-    else:
-        #return items
-        open('driveFiles.txt', 'w').close()
-        driveFiles = open(r"driveFiles.txt","a")
-        for item in items:
-            driveFiles.write(item['name'] + "\t\t" + item['id'] + "\n")
-        driveFiles.close()
+    folderID = "14YblDFKymQeUFhDaciwy4BDPZmXDY9v5"
 
-importDrive()
+    query = f"parents = '{folderID}'"
+    response = service.files().list(q=query).execute()
+    files = response.get('files')
+    for x in files:
+        print(x)
+
+    # if not items:
+    #     print('No files found.')
+    # else:
+    #     open("driveFiles.txt","w").close()
+    #     f = open("driveFiles.txt","w")
+    #     for item in items:
+    #         f.write(u'{0} ({1})'.format(item['name'], item['id']) + "\n")
+
+
+if __name__ == '__main__':
+    main()
