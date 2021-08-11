@@ -1,17 +1,4 @@
-from XYcoordinates import *
-import pyautogui as ag
-import time
-from datetime import date
-
-import os
-import sys
-
-today = date.today()
-# mm_dd_yy
-currDate = today.strftime("%m_%d_%y")
-
-parentDir = 'C:/Users/Ajacobs/Reports/'
-path = os.path.join(parentDir, currDate)
+from saveReports import *
 
 def printInHouse():
     #   navigate menu

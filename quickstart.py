@@ -4,11 +4,12 @@ from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
+from apiclient.http import MediaFileUpload
 
 # If modifying these scopes, delete the file token.json.
-SCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly']
+SCOPES = ['https://www.googleapis.com/auth/drive']
 
-def main():
+def qs():
     """Shows basic usage of the Drive v3 API.
     Prints the names and ids of the first 10 files the user has access to.
     """
@@ -42,17 +43,15 @@ def main():
     query = f"parents = '{folderID}'"
     response = service.files().list(q=query).execute()
     files = response.get('files')
-    for x in files:
-        print(x)
 
-    # if not items:
-    #     print('No files found.')
-    # else:
-    #     open("driveFiles.txt","w").close()
-    #     f = open("driveFiles.txt","w")
-    #     for item in items:
-    #         f.write(u'{0} ({1})'.format(item['name'], item['id']) + "\n")
+    if not items:
+        print('No files found.')
+    else:
+        open("driveFiles.txt","w").close()
+        f = open("driveFiles.txt","w")
+        for item in items:
+            f.write(u'{0} ({1})'.format(item['name'], item['id']) + "\n")
 
 
 if __name__ == '__main__':
-    main()
+    qs()
