@@ -23,9 +23,9 @@ def RKLogin():
     time.sleep(8)   #wait for roomkey to startup
 
     ####    login                   ####
-    ag.write('alexjacobs', interval = .1)   #username
+    ag.write('*******', interval = .1)   #username
     ag.press('tab')
-    ag.write('LaceFace11', interval = .1)   #password
+    ag.write('*******', interval = .1)   #password
     ag.press('enter')
     time.sleep(30)  #wait for roomkey
 
